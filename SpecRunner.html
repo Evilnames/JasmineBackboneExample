@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jquery.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <script src="lib/jasmine-2.4.1/jquerytest.js"></script>
+  <!-- include source files here... -->
+  <script src="app.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="spec/appspec.js"></script>
+
+  <script id="testTemplate" type="text/template">
+    <span class="test"><%=displayValue%></span>
+    <ul class="todo-list-item">
+      <%
+        _.each(todo, function(item){
+      %>
+        <li class="listItem">
+        <%
+          if(item.hasOwnProperty('showCheckBox')){
+            if(item.showCheckBox){
+            %>
+              <input class="checkbox--user" type="checkbox">
+            <%
+            }
+          }
+        %>
+        <span class="innerValue"><%=item.value%></span>
+        </li>
+      <%
+        })
+      %>
+    </ul>
+  </script>
+
+</head>
+
+<body>
+  <div id="testHolder"></div>
+</body>
+</html>
